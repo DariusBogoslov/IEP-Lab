@@ -4,9 +4,6 @@
 
 using namespace std;
 
-#define INPUT BCM2835_GPIO_FSEL_INPT
-#define OUTPUT BCM2835_GPIO_FSEL_OUTP
-
 Pin::Pin(uint8_t pin_number, uint8_t direction) {
     if (!bcm2835_init()) {
         cerr << "Failed to initialise BCM module";
@@ -15,6 +12,10 @@ Pin::Pin(uint8_t pin_number, uint8_t direction) {
     this->pin_number = pin_number;
     this->pull_up = BCM2835_GPIO_PUD_OFF;
     this->direction = direction;
+}
+
+Pin::~Pin() {
+    bcm2835_close();
 }
 
 void Pin::set_direction(uint8_t direction) {
