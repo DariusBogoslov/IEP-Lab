@@ -44,3 +44,6 @@ void Pin::write(uint8_t value) {
     }
 }
 
+uint8_t Pin::get_pin_number() {
+    return this->pin_number;
+}

@@ -17,6 +17,7 @@ public:
     void set_pud(uint8_t mode);
     uint8_t read();
     void write(uint8_t value);
+    uint8_t get_pin_number();
 
 private:
     uint32_t pin_number;
