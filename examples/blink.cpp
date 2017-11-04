@@ -5,7 +5,7 @@
 #define PIN BCM_PIN_17
 
 int main() {
-    Pin* pin = new Pin(BCM_PIN_17, OUTPUT);
+    Pin* pin = new Pin(PIN, OUTPUT);
 
     while(1) {
         pin->write(HIGH);
